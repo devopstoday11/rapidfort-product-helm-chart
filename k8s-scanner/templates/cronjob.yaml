@@ -1,0 +1,55 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "k8s-scanner.fullname" . }}
+  labels:
+    {{- include "k8s-scanner.labels" . | nindent 4 }}
+spec:
+  schedule: "0 */12 * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          {{- with .Values.jobAnnotations }}
+          annotations:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          labels:
+            {{- include "k8s-scanner.selectorLabels" . | nindent 12 }}
+        spec:
+          serviceAccountName: {{ include "k8s-scanner.serviceAccountName" . }}
+          containers:
+          - name: {{ include "k8s-scanner.name" . }}
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            envFrom:
+            - configMapRef:
+                name: {{ include "k8s-scanner.configMapName" . }}
+            env:
+            - name: RF_ACCESS_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "k8s-scanner.secretName" . }}
+                  key: RF_ACCESS_ID
+                  optional: false
+            - name: RF_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "k8s-scanner.secretName" . }}
+                  key: RF_SECRET_ACCESS_KEY
+                  optional: false
+            volumeMounts:
+            - mountPath: /var/run
+              name: docker-sock
+            - mountPath: /tmp
+              name: docker-tmp
+            resources:
+              {{- toYaml .Values.resources | nindent 16 }}
+          volumes:
+          - name: docker-sock
+            hostPath:
+              path: /var/run
+          - name: docker-tmp
+            hostPath:
+              path: /tmp
+          restartPolicy: OnFailure
