@@ -1,0 +1,20 @@
+{{- if .Values.clusterRoleBinding.create -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "k8s-scanner.clusterRoleBindingName" . }}
+  labels:
+    {{- include "k8s-scanner.labels" . | nindent 4 }}
+  {{- with .Values.clusterRoleBinding.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "k8s-scanner.serviceAccountName" . }}
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "k8s-scanner.clusterRoleName" . }}
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
