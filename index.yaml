@@ -3,12 +3,12 @@ entries:
   k8s-scanner:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-30T17:14:04.544292-07:00"
+    created: "2022-06-30T17:16:58.832474-07:00"
     description: Kubernetes CVE scanner by RapidFort
-    digest: d3bf03ee6f7b3ee0fbf49033b18e8cef980135472f51d52cc40740c9f93e97fd
+    digest: 14ffd320a9297e108ee9d2cece5a70a8df8c573e68917e6006c192f6902a8c1c
     name: k8s-scanner
     type: application
     urls:
     - https://rapidfort.github.io/helm/releases/k8s-scanner-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-30T17:14:04.542383-07:00"
+generated: "2022-06-30T17:16:58.83213-07:00"

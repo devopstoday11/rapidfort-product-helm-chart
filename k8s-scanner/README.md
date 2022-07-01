@@ -17,5 +17,5 @@ helm upgrade --install rel1 rapidfort/k8s-scanner \
 #### Uninstalling k8s-scanner
 
 ```bash
-$helm delete rel1 -n k8s-scanner
+helm delete rel1 -n k8s-scanner
 ```
