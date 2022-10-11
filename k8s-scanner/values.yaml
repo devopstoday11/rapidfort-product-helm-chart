@@ -9,7 +9,7 @@ secret:
   rf_secret_access_key: ""
 
 image:
-  repository: 274057717848.dkr.ecr.us-east-1.amazonaws.com/k8s-scanner
+  repository: public.ecr.aws/rapidfort/k8s-scanner
   tag: latest
   pullPolicy: IfNotPresent
 
