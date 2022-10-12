@@ -1,0 +1,8 @@
+# Artifact Hub repository metadata file
+#
+repositoryID: 4353cc37-c42c-4f10-8c64-9912b65ef7af
+owners: # 
+  - name: Vinod Gupta
+    email: vinod@rapidfort.com
+  - name: Rajeev Thakur
+    email: rajeev@rapidfort.com
