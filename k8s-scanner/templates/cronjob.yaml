@@ -22,6 +22,11 @@ spec:
           - name: {{ include "k8s-scanner.name" . }}
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
+            {{- if .Values.capAddSysPtrace.enabled }}
+            securityContext:
+              capabilities:
+                add: ["SYS_PTRACE"]
+            {{- end }}
             envFrom:
             - configMapRef:
                 name: {{ include "k8s-scanner.configMapName" . }}

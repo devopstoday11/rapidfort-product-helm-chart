@@ -36,3 +36,6 @@ configMap: {}
 podAnnotations: {}
 
 resources: {}
+
+capAddSysPtrace:
+  enabled: false
