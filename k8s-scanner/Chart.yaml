@@ -14,5 +14,5 @@ maintainers:
   - name: Vinod Gupta
     email: vinod@rapidfort.com
     url: https://vinodgupta.org/
-icon:
+icon: https://github.com/rapidfort/helm/raw/main/assets/rf_logo_icon.png
 appVersion: "1.16.0"
