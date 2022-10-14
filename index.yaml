@@ -3,12 +3,46 @@ entries:
   k8s-scanner:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-10-11T15:44:54.617814-07:00"
-    description: Kubernetes CVE scanner by RapidFort
-    digest: 24348fdae80c41eb048a568ce42cf12ffbf2a5556ab2c42adb0f4ea275101b61
+    created: "2022-10-14T11:47:48.099798-07:00"
+    description: Kubernetes SCA scanner by RapidFort
+    digest: 6e6dc07cbae62eee2de6699cfe93c4a3f0e8586f8205c119e13edcd300fbbf10
+    home: https://www.rapidfort.com/
+    icon: https://github.com/rapidfort/helm/raw/main/assets/rf_logo_icon.png
+    keywords:
+    - SCA
+    - Kubernetes
+    - RapidFort
+    maintainers:
+    - email: vinod@rapidfort.com
+      name: Vinod Gupta
+      url: https://vinodgupta.org/
     name: k8s-scanner
+    sources:
+    - https://github.com/rapidfort/k8s-scanner
+    type: application
+    urls:
+    - https://rapidfort.github.io/helm/releases/k8s-scanner-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-10-14T11:47:48.099439-07:00"
+    description: Kubernetes SCA scanner by RapidFort
+    digest: 8a60c061a239463b7dec896bb7c4ddab03cd6473fe4ffb4530bc887238bd3598
+    home: https://www.rapidfort.com/
+    icon: https://github.com/rapidfort/helm/raw/main/assets/rf_logo_icon.png
+    keywords:
+    - SCA
+    - Kubernetes
+    - RapidFort
+    maintainers:
+    - email: vinod@rapidfort.com
+      name: Vinod Gupta
+      url: https://vinodgupta.org/
+    name: k8s-scanner
+    sources:
+    - https://github.com/rapidfort/k8s-scanner
     type: application
     urls:
     - https://rapidfort.github.io/helm/releases/k8s-scanner-0.1.0.tgz
-    version: 0.1.1
-generated: "2022-10-11T15:44:54.617374-07:00"
+    version: 0.1.0
+generated: "2022-10-14T11:47:48.098942-07:00"
