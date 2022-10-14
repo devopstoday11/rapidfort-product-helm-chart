@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "k8s-scanner.labels" . | nindent 4 }}
 spec:
-  schedule: "0 */12 * * *"
+  schedule: {{ .Values.cronSchedule }}
   jobTemplate:
     spec:
       template:

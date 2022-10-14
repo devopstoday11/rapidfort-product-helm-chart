@@ -1,6 +1,6 @@
 apiVersion: v2
 name: k8s-scanner
-version: "0.1.2"
+version: "0.1.3"
 description: Kubernetes SCA scanner by RapidFort
 type: application
 keywords:
@@ -15,4 +15,3 @@ maintainers:
     email: vinod@rapidfort.com
     url: https://vinodgupta.org/
 icon: https://github.com/rapidfort/helm/raw/main/assets/rf_logo_icon.png
-appVersion: "1.16.0"

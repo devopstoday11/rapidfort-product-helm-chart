@@ -11,11 +11,13 @@ secret:
 image:
   repository: rapidfort/k8s-scanner
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
+
+cronSchedule: "0 */12 * * *"
 
 clusterRole:
   create: true
