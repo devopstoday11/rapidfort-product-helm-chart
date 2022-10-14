@@ -2,14 +2,14 @@
 # This is a YAML-formatted file.
 
 global:
-  rf_app_host: "frontrow.rapidfort.com"
+  rf_app_host: "https://frontrow.rapidfort.com"
 
 secret:
   rf_access_id: ""
   rf_secret_access_key: ""
 
 image:
-  repository: public.ecr.aws/rapidfort/k8s-scanner
+  repository: rapidfort/k8s-scanner
   tag: latest
   pullPolicy: IfNotPresent
 
