@@ -11,11 +11,10 @@ helm repo add rapidfort https://rapidfort.github.io/helm
 helm upgrade --install rel1 rapidfort/k8s-scanner \
     --set secret.rf_access_id=$RF_ACCESS_ID \
     --set secret.rf_secret_access_key=$RF_SECRET_ACCESS_KEY \
-    -n k8s-scanner
 ```
 
 #### Uninstalling k8s-scanner
 
 ```bash
-helm delete rel1 -n k8s-scanner
+helm delete rel1
 ```
