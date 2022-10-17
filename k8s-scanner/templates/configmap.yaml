@@ -9,4 +9,4 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 data:
-  RF_ENDPOINT: {{ .Values.global.rf_app_host }}
+  RF_ENDPOINT: {{ .Values.global.rf_root_url }}

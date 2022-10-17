@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 
 global:
-  rf_app_host: "https://frontrow.rapidfort.com"
+  rf_root_url: "https://frontrow.rapidfort.com"
 
 secret:
   rf_access_id: ""

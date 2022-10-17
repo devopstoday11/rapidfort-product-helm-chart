@@ -40,7 +40,7 @@ $ helm delete my-release
 
 | Parameter                 | Description  | Default     |
 | ---------                 | ------        | ------        |
-| `global.rf_app_host`      | RapidFort platform URL | https://frontrow.rapidfort.com |
+| `global.rf_root_url`      | RapidFort platform URL | https://frontrow.rapidfort.com |
 | `secret.rf_access_id`     | RF_ACCESS_ID for RapidFort service account | "" |
 | `secret.rf_secret_access_key`    | RF_SECRET_ACCESS_KEY for RapidFort service account | "" |
 | `image.repository`    | Container image repository | "rapidfort/k8s-scanner" |
