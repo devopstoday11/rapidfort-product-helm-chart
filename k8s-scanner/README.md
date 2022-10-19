@@ -1,20 +1,20 @@
 # k8s-scanner
 
-<b> k8s-scanner is RapidFort's Kubernetes SCA scanner</b>
+<b>k8s-scanner is [RapidFort](https://rapidfort.com)'s Kubernetes SCA scanner</b>
 
-It enumerates all container images running in Kubernetes cluster
-and sends them to RapidFort's SCA scanner to prepare SBOM and accurate vulnerability report.
+Generate [SBOMs](https://www.rapidfort.com/post/what-is-software-optimization) and get an accurate vulnerability report for every container running in your Kubernetes cluster. View the results on the RapidFort platform.
 
-## Prerequisites
+## Getting Started
 
-Before installing the chart, you must first create a free account on [RapidFort](https://frontrow.rapidfort.com) and generate a service account.
+1. Create a free account on [RapidFort](https://frontrow.rapidfort.com).
 
-Service account will provide RF_ACCESS_ID and RF_SECRET_ACCESS_KEY values. Please export the values in your environment or add them to your profile.
+1. Launch the Quick Start guide and click "Kubernetes Scanner" to generate a service account for your Kubernetes instance.
 
-## Installing the chart
+1. Export the RF_ACCESS_ID and RF_SECRET_ACCESS_KEY values for your environment or add them to your profile.
 
-To install the chart with the release name `my-release`:
+## Installing the Helm Chart
 
+To install the [chart](https://helm.sh/docs/topics/charts/) with the release name `my-release`:
 
 ```bash
 ## Add the RapidFort Helm repository
@@ -30,7 +30,7 @@ $ helm upgrade --install my-release rapidfort/k8s-scanner \
 
 ## Uninstalling the chart
 
-To uninstall/delete the my-release deployment:
+To uninstall/delete the `my-release` deployment:
 
 ```bash
 $ helm delete my-release
@@ -51,7 +51,7 @@ $ helm delete my-release
 
 ## Cluster Role
 
-k8s-scanner needs to enumerate list of all pods running in kubernetes cluster and hence need "list" permission on "pods" resource for entire cluster.
+k8s-scanner enumerates a list of all pods running in your Kubernetes cluster, so it requires "list" permission on the "pods" resource for the entire cluster.
 
 ```
 - apiGroups: [""]
@@ -61,7 +61,7 @@ k8s-scanner needs to enumerate list of all pods running in kubernetes cluster an
 
 ## Host Access
 
-k8s-scanner currently needs to access host machine docker socket running at `/var/run` to access Docker images. It also needs access to `/tmp` volume for accessing exported docker images.
+k8s-scanner currently needs to access the host machine's docker socket running at `/var/run` to access Docker images. It also needs access to `/tmp` volume for accessing exported docker images.
 
 ```
 volumes:
